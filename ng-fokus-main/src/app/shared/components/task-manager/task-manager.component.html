@@ -1,0 +1,54 @@
+<section class="app__section-task-container">
+  <div class="app__section-task-content">
+      <header class="app__section-active-task">
+          <p class="app__section-active-task-label">#Em andamento:</p>
+          <p class="app__section-active-task-description">{{ taskItemSelected ? taskItemSelected.description : 'Nome da tarefa em andamento'}}</p>
+      </header>
+      <div class="app__section-task-header">
+          <h2 class="app__section-tasks-heading">Lista de tarefas:</h2>
+          <div class="dropdown-container">
+              <button class="app_button-more">
+                  <img src="./assets/images/more.svg" alt="">
+              </button>
+              <ul class="app__section-task-header__ul">
+                  <li class="app__section-task-header__li">
+                      <button (click)="onCleanTasksClick()" class="app__section-task-header__li__button" id="btn-remover-todas">
+                          <img src="./assets/images/trash.svg" alt="">
+                          Limpar todas as tarefas
+                      </button>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <ul class="app__section-task-list">
+        <ng-container *ngFor="let taskItem of tasks">
+          <app-task-list
+            [taskItem]="taskItem"
+            (onTaskClick)="onTaskListClick($event)">
+          </app-task-list>
+        </ng-container>
+      </ul>
+
+      <form *ngIf="hasShowForm" [formGroup]="taskForm" class="app__form-add-task" (ngSubmit)="onSaveTask()">
+          <div class="app__form-field">
+              <label class="app__form-label">
+                  Adicionando tarefa
+              </label>
+              <textarea required rows="4" class="app__form-textarea" formControlName="description" placeholder="No que você está trabalhando?"></textarea>
+          </div>
+          <footer class="app__form-footer">
+              <div class="splitter"></div>
+              <button (click)="onCancelBtnClick()" type="button" class="app__form-footer__button app__form-footer__button--cancel">
+                  <img src="./assets/images/close.png" alt=""> Cancelar
+              </button>
+              <button class="app__form-footer__button app__form-footer__button--confirm">
+                  <img src="./assets/images/save.png" alt=""> Salvar
+              </button>
+          </footer>
+      </form>
+      <button class="app__button--add-task" (click)="onAddTaskClick()">
+          <img src="./assets/images/add_circle.png" alt=""> Adicionar nova tarefa
+      </button>
+  </div>
+</section>

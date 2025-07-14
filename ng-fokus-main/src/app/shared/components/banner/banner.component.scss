@@ -1,0 +1,50 @@
+@use '../../../../styles/variables' as *;
+
+.app {
+  &__section-banner-container {
+    width: 99rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    line-height: 150%;
+    font-size: 5.2rem;
+    font-style: normal;
+    color: var(--color-secondary);
+    font-weight: 200;
+    max-width: 46rem;
+
+    &-strong {
+      font-weight: 600;
+    }
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+.app {
+  &__section-banner-container {
+    @include respond-to("small") {
+      width: 100%;
+      padding: 0 2rem;
+    }
+  }
+
+  &__title {
+    @include respond-to("small") {
+      font-size: 4rem;
+      max-width: 100%;
+    }
+  }
+}

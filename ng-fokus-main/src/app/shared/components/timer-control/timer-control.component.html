@@ -1,0 +1,49 @@
+<section class="app__section-card-container">
+  <div class="app__card">
+      <ul class="app__card-list">
+          <li class="app__card-list-item">
+              <button data-contexto="foco"
+                class="app__card-button app__card-button--foco"
+                [class.active]="context() === 'foco'"
+                (click)="onChangeContext('foco')">Foco</button>
+          </li>
+          <li class="app__card-list-item">
+              <button data-contexto="short"
+                class="app__card-button app__card-button--curto"
+                [class.active]="context() === 'descanso-curto'"
+                (click)="onChangeContext('descanso-curto')">Descanso curto</button>
+          </li>
+          <li class="app__card-list-item">
+              <button data-contexto="long"
+                class="app__card-button app__card-button--longo"
+                [class.active]="context() === 'descanso-longo'"
+                (click)="onChangeContext('descanso-longo')">Descanso longo</button>
+          </li>
+      </ul>
+      <div class="app__card-timer">{{ timerFormat }}</div>
+      <ul class="app__card-list">
+          <li class="app__card-list-item">
+              <label class="toggle">
+                  <input class="toggle-checkbox" [(ngModel)]="hasPlaySong" type="checkbox" (change)="onToggleMusicClick()">
+                  <div class="toggle-switch"></div>
+              </label>
+          </li>
+          <li class="app__card-list-item">
+              <label class="app__card-list-label">
+                  Música
+              </label>
+          </li>
+      </ul>
+      <div class="app__card-primary-button-wrapper">
+          <button *ngIf="!isTimerStarted" class="app__card-primary-button" (click)="onStartClick()">
+              <img class="app__card-primary-butto-icon" src="./assets/images/play_arrow.png" alt="">
+              <span>Começar</span>
+          </button>
+
+          <button *ngIf="isTimerStarted" class="app__card-primary-button" (click)="onPauseClick()">
+            <img class="app__card-primary-butto-icon" src="./assets/images/pause.png" alt="">
+            <span>Pausa</span>
+          </button>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+@use '../../../../../styles/variables' as *;
+
+.app {
+  &__section-task {
+    &-list {
+      &-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: spacing('lg');
+        border-radius: radius('sm');
+        background: color('fundo-card');
+        margin-bottom: spacing('sm');
+        padding: spacing('md');
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &-description {
+          flex-grow: 1;
+          margin: 0;
+          font-size: fontSize('sm');
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%;
+          color: color('azul-profundo');
+          font-family: font('primary');
+        }
+
+        &--active {
+          &.app__section-task-list-item {
+            border: 2px solid #FFF;
+          }
+        }
+      }
+    }
+  }
+
+  &_button {
+    &-edit {
+      @include button-base;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+
+      &:disabled {
+        color: #e6e6e6;
+        opacity: 0.8;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

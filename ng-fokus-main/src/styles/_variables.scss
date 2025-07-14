@@ -1,0 +1,117 @@
+// Colors Map
+$colors: (
+  'primary': #123456,
+  'secondary': #FFF,
+  'azul-royal': #144480,
+  'fundo-card-timer': rgba(20, 68, 128, 0.30),
+  'lils': #B872FF,
+  'azul-profundo': #01080E,
+  'fundo-card': rgba(255, 255, 255, 0.50),
+  'fundo-card-concludo': rgba(0, 244, 191, 0.40),
+  'footer-bg': #010B15,
+  'footer-text': rgba(182, 182, 182, 0.8),
+  'toggle-bg': #ccc,
+  'fundo-modal': #1B293B,
+  'input-bg': #98A0A8
+);
+
+// Gradients Map
+$gradients: (
+  'botoes': linear-gradient(180deg, map-get($colors, 'lils') 0%, map-get($colors, 'azul-royal') 100%),
+  'foco': linear-gradient(180deg, #8B1FF8 0%, #041832 48.44%, map-get($colors, 'azul-profundo') 100%),
+  'descanso-curto': linear-gradient(180deg, #0F725C 0%, #041832 48.44%, map-get($colors, 'azul-profundo') 100%),
+  'descanso-longo': linear-gradient(180deg, #1875E9 0%, #041832 48.44%, map-get($colors, 'azul-profundo') 100%),
+  'toggle-button': linear-gradient(to bottom, #fff 0%, #eee 100%),
+  'toggle-button-hover': linear-gradient(to bottom, #fff 0%, #fff 100%)
+);
+
+// Fonts
+$fonts: (
+  'primary': 'Montserrat',
+  'secondary': 'Unbounded'
+);
+
+// Spacing
+$spacing: (
+  'xs': 0.4rem,
+  'sm': 0.8rem,
+  'md': 1.6rem,
+  'lg': 2.4rem,
+  'xl': 3.2rem,
+  'xxl': 4rem,
+  'footer-padding-v': 2.8rem,
+  'footer-padding-h': 6rem
+);
+
+// Border Radius
+$border-radius: (
+  'sm': 0.8rem,
+  'md': 1.6rem,
+  'lg': 3.2rem
+);
+
+// Font Sizes
+$font-sizes: (
+  'xs': 1.5rem,
+  'sm': 1.8rem,
+  'md': 2.6rem,
+  'lg': 5.2rem,
+  'xl': 12rem
+);
+
+// Breakpoints
+$breakpoints: (
+  'mobile': 767px,
+  'tablet': 1024px
+);
+
+// Z-index
+$z-index: (
+  'dropdown': 10,
+  'modal': 20,
+  'overlay': 30
+);
+
+// Functions to access maps
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+@function gradient($key) {
+  @return map-get($gradients, $key);
+}
+
+@function spacing($key) {
+  @return map-get($spacing, $key);
+}
+
+@function font($key) {
+  @return map-get($fonts, $key);
+}
+
+@function radius($key) {
+  @return map-get($border-radius, $key);
+}
+
+@function fontSize($key) {
+  @return map-get($font-sizes, $key);
+}
+
+// Common Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-base {
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+}
+
+@mixin responsive($breakpoint) {
+  @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}

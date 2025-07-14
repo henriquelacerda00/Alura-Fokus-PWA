@@ -1,0 +1,134 @@
+@use '../../../../styles/variables' as *;
+
+.app {
+  &__section-card-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__card {
+    border-radius: radius('lg');
+    border: spacing('xs') solid color('azul-royal');
+    background: color('fundo-card-timer');
+    padding: spacing('lg');
+    margin: spacing('xxl') 0;
+    width: 59rem;
+    max-width: 90%;
+
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      @include flex-center;
+      gap: spacing('md');
+
+      &-label {
+        color: color('secondary');
+        font-family: font('primary');
+        font-size: fontSize('sm');
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+
+    &-button {
+      font-family: font('primary');
+      font-size: fontSize('sm');
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      background: none;
+      padding: spacing('sm');
+      color: color('secondary');
+      @include button-base;
+
+      &.active {
+        border-radius: radius('sm');
+        background: color('azul-royal');
+        font-weight: 600;
+      }
+    }
+
+    &-timer {
+      color: color('secondary');
+      text-align: center;
+      font-family: font('secondary');
+      font-size: fontSize('xl');
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin: spacing('xl');
+    }
+
+    &-primary-button {
+      padding: spacing('sm');
+      width: 12rem;
+      color: color('secondary');
+      @include button-base;
+      border-radius: radius('lg');
+      background: gradient('botoes');
+      margin-top: spacing('xl');
+      font-size: fontSize('sm');
+      @include flex-center;
+      gap: spacing('sm');
+
+      &-wrapper {
+        @include flex-center;
+      }
+    }
+  }
+}
+
+// Toggle Styles
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+
+  &-switch {
+    display: inline-block;
+    background: color('toggle-bg');
+    border-radius: radius('md');
+    width: 5.8rem;
+    height: 3.2rem;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+
+    &:before {
+      content: "";
+      display: block;
+      background: gradient('toggle-button');
+      border-radius: 50%;
+      width: 2.4rem;
+      height: 2.4rem;
+      position: absolute;
+      top: spacing('xs');
+      left: spacing('xs');
+      transition: left 0.25s;
+    }
+  }
+
+  &:hover .toggle-switch:before {
+    background: gradient('toggle-button-hover');
+  }
+
+  &-checkbox {
+    position: absolute;
+    visibility: hidden;
+
+    &:checked + .toggle-switch {
+      background: color('lils');
+
+      &:before {
+        left: 3rem;
+      }
+    }
+  }
+}
+
+// Media Queries
+@include responsive('mobile') {
+  .app__card-timer {
+    font-size: fontSize('lg');
+  }
+}

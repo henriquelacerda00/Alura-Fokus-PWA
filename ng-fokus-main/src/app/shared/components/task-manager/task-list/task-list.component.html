@@ -1,0 +1,8 @@
+<li *ngIf="taskItem" class="app__section-task-list-item"
+   [ngClass]="{'app__section-task-list-item--active': taskItem.isActive}" (click)="onTaskListClick(taskItem)">
+  <img src="./assets/images/check-icon.svg" alt="check-icon" class="app__section-task-icon-status">
+  <p class="app__section-task-list-item-description"> {{ taskItem.description }}</p>
+  <button class="app_button-edit">
+    <img src="./assets/images/edit.png" alt="">
+  </button>
+</li>

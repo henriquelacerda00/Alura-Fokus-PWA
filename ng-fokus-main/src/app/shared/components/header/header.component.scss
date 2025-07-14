@@ -1,0 +1,21 @@
+.app {
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  &__logo-figure {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo-image {
+    max-width: 100%;
+    height: auto;
+  }
+}

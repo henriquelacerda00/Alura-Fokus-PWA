@@ -1,0 +1,45 @@
+@import './styles/variables';
+
+:root {
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+  }
+}
+
+[data-contexto] {
+  &[data-contexto="foco"] {
+    --main-bg-color: #{map-get($gradients, 'foco')};
+  }
+
+  &[data-contexto="descanso-curto"] {
+    --main-bg-color: #{map-get($gradients, 'descanso-curto')};
+  }
+
+  &[data-contexto="descanso-longo"] {
+    --main-bg-color: #{map-get($gradients, 'descanso-longo')};
+  }
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+html {
+  background: var(--main-bg-color);
+  min-height: 100vh;
+  font-size: 10px;
+}
+
+body {
+  min-height: 100vh;
+  background: {
+    image: url("./assets/images/pattern.png");
+    size: cover;
+    repeat: no-repeat;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Unbounded', cursive;
+}

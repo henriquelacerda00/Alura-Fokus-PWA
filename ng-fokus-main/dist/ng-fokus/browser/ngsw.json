@@ -1,0 +1,125 @@
+{
+  "configVersion": 1,
+  "timestamp": 1752506876034,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-F4PJU6QE.js",
+        "/manifest.webmanifest",
+        "/polyfills-FFHMD2TL.js",
+        "/styles-CYVMYTIQ.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/images/add_circle.png",
+        "/assets/images/close.png",
+        "/assets/images/delete.png",
+        "/assets/images/descanso-curto.png",
+        "/assets/images/descanso-longo.png",
+        "/assets/images/edit.png",
+        "/assets/images/foco.png",
+        "/assets/images/logo.png",
+        "/assets/images/music_note.png",
+        "/assets/images/pattern.png",
+        "/assets/images/pause.png",
+        "/assets/images/play_arrow.png",
+        "/assets/images/save.png",
+        "/assets/sounds/beep.mp3",
+        "/assets/sounds/luna-rise-part-one.mp3",
+        "/assets/sounds/pause.mp3",
+        "/assets/sounds/play.wav"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-calls",
+      "patterns": [
+        "\\/api\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "timeoutMs": 0,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    },
+    {
+      "name": "assets",
+      "patterns": [
+        "\\/assets\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 200,
+      "maxAge": 2592000000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/assets/images/add_circle.png": "3364ba00cecb2f78b0108f53d599970fd9b11955",
+    "/assets/images/close.png": "9dac131a626055150145608ec6fda86ead0c1d27",
+    "/assets/images/delete.png": "328c0f413f06497ef2dd47e919f9caa21f0847a0",
+    "/assets/images/descanso-curto.png": "f8e50b73fc3e3614a092377231187b3af993f3d7",
+    "/assets/images/descanso-longo.png": "89682b594ddcd12a1e1089f9c61824569d37bb25",
+    "/assets/images/edit.png": "e69b73ebf48563452d9f2833eaadeeb0749b30c5",
+    "/assets/images/foco.png": "dcb2a7378d7745b0c1731aef522a70896a369475",
+    "/assets/images/logo.png": "f34dbe439b050812f2f4c48e1127017b437a0a1f",
+    "/assets/images/music_note.png": "dd166cbdb5060802e9761c7aae6b5563f1f5ee9a",
+    "/assets/images/pattern.png": "46038b3d526be9d7c618bc3b9ff652e2a6b81a02",
+    "/assets/images/pause.png": "60abb08eb0ed5365543f864b3d912f4402aab32f",
+    "/assets/images/play_arrow.png": "db4705f7aaafc7b2d3ceab39a1ad5455d28ca92d",
+    "/assets/images/save.png": "f3f5a5d8336bd2e8914389072df3056e59c2c168",
+    "/assets/sounds/beep.mp3": "2fab2f0c8e542fcb940cdeae53c7c4525747402e",
+    "/assets/sounds/luna-rise-part-one.mp3": "25570ed8c1b66206b642359fe1f683172b0e57f1",
+    "/assets/sounds/pause.mp3": "bfaacca7a6b76821d62250d9b26e010bbafa4b72",
+    "/assets/sounds/play.wav": "4d61070126c72c18da03af1d3a0d052042e76e7e",
+    "/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/index.html": "9cc577d170701f6451b5e97e281e18e40740663a",
+    "/main-F4PJU6QE.js": "1748c6995fcf3ea91d65672028a8d8fd6945112f",
+    "/manifest.webmanifest": "1d8cf055eb36a62704026b6a92917bb1276499a2",
+    "/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/styles-CYVMYTIQ.css": "6cd5309f56e942c2a97ca671a51189a90b82c9e3"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
